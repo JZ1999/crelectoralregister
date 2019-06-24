@@ -26,6 +26,12 @@ SECRET_KEY = 'kbtt*=#n1-rud6)oxr6f!!839hp+xg4e3)^k43*%gg2y8&)3$b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+AVAILABLE_DATABASES = {"postgresql": "postgresql", "mongodb": "mongodb"}
+USE_DATABASE = AVAILABLE_DATABASES["mongodb"]
+MONGO_PORT = 27017
+MONGO_HOST = "localhost"
+MONGO_DATABASE_NAME = "crelectoral"
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -81,7 +87,7 @@ WSGI_APPLICATION = 'tse_demo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'padron-electoral',
+        'NAME': 'padron_electoral',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': 'localhost',

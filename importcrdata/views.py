@@ -5,9 +5,12 @@ from django.views.generic import View, ListView, DetailView, CreateView
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 
-from importcrdata.models import PadronElectoral, Distelec
+from importcrdata.models import PadronElectoral, Distelec, PadronElectoralFactory
 from . import forms
 
+factory = PadronElectoralFactory()
+for elem in factory.dbms.filter(test__contains="test1"):
+    print(elem)
 
 class PadronView(ListView):
     """
